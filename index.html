@@ -17,12 +17,45 @@
       line-height: 1.6;
     }
 
+    /* ── FEATURED TESTIMONIAL BANNER ── */
+    .feature-quote {
+      background: #221D3A;
+      border-bottom: 1px solid rgba(212,168,64,0.25);
+      padding: 2rem 2rem;
+      text-align: center;
+    }
+    .feature-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-style: normal;
+      font-weight: 400;
+      color: #F2EDE8;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+    .feature-quote .highlight {
+      color: #D4A840;
+      font-weight: 600;
+    }
+    .feature-quote .result-badge {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #E8956A;
+      border: 1px solid rgba(232,149,106,0.35);
+      border-radius: 2px;
+      padding: 3px 10px;
+    }
+
+    /* ── HERO ── */
     .hero {
       padding: 4rem 2rem 3rem;
       text-align: center;
       border-bottom: 1px solid rgba(220,175,80,0.2);
     }
-
     .eyebrow {
       font-size: 11px;
       letter-spacing: 0.18em;
@@ -30,7 +63,6 @@
       color: #D4A840;
       margin-bottom: 1.2rem;
     }
-
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.5rem, 8vw, 3.6rem);
@@ -39,12 +71,10 @@
       color: #F2EDE8;
       margin-bottom: 0.5rem;
     }
-
     .hero-name em {
       font-style: italic;
       color: #E8956A;
     }
-
     .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.25rem;
@@ -53,12 +83,12 @@
       margin: 0.5rem 0 0;
     }
 
+    /* ── SECTIONS ── */
     .section {
       padding: 3rem 2rem;
       max-width: 680px;
       margin: 0 auto;
     }
-
     .section-label {
       font-size: 10px;
       letter-spacing: 0.2em;
@@ -76,12 +106,12 @@
       background: rgba(220,175,80,0.2);
     }
 
+    /* ── SERVICE CARDS ── */
     .cards {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
-
     .card {
       background: #221D3A;
       border: 1px solid rgba(242,237,232,0.08);
@@ -91,7 +121,6 @@
     }
     .card:hover { border-color: rgba(212,168,64,0.35); }
     .card.featured { border-color: rgba(212,168,64,0.5); }
-
     .card-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem;
@@ -100,14 +129,12 @@
       margin-bottom: 0.6rem;
       line-height: 1.2;
     }
-
     .card-body {
       font-size: 13px;
       color: #6A6088;
       line-height: 1.6;
       margin-bottom: 1.25rem;
     }
-
     .card-includes {
       list-style: none;
       margin-bottom: 1.5rem;
@@ -125,12 +152,10 @@
       color: #D4A840;
       flex-shrink: 0;
     }
-
     .card-footer {
       border-top: 1px solid rgba(242,237,232,0.07);
       padding-top: 1rem;
     }
-
     .price {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.2rem;
@@ -144,12 +169,80 @@
       color: #6A6088;
     }
 
+    /* ── ABOUT ── */
+    .about-inner {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .about-photo {
+      width: 160px;
+      min-width: 160px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 8px;
+      border: 1px solid rgba(212,168,64,0.2);
+      image-rendering: auto;
+    }
+    .about-text p {
+      font-size: 14px;
+      color: #A89EC0;
+      line-height: 1.75;
+      margin-bottom: 0.9rem;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong {
+      color: #F2EDE8;
+      font-weight: 500;
+    }
+    @media (max-width: 520px) {
+      .about-inner { flex-direction: column; }
+      .about-photo { width: 100%; min-width: unset; height: 260px; }
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: #150F28;
+      border-top: 1px solid rgba(220,175,80,0.1);
+      border-bottom: 1px solid rgba(220,175,80,0.1);
+    }
+    .testimonial-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .testimonial-card {
+      background: #1E1838;
+      border: 1px solid rgba(242,237,232,0.07);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .testimonial-card blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #C8C0D8;
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .testimonial-card blockquote::before { content: '\201C'; color: #D4A840; }
+    .testimonial-card blockquote::after  { content: '\201D'; color: #D4A840; }
+    .testimonial-meta {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #D4A840;
+    }
+    .testimonial-card.placeholder blockquote { color: #4A4060; }
+    .testimonial-card.placeholder .testimonial-meta { color: #4A4060; }
+
+    /* ── CTA ── */
     .cta {
       text-align: center;
       padding: 3.5rem 2rem;
       border-top: 1px solid rgba(220,175,80,0.15);
     }
-
     .cta-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
@@ -157,15 +250,21 @@
       color: #F2EDE8;
       margin-bottom: 0.5rem;
     }
-
     .cta-sub {
       font-size: 13px;
       color: #6A6088;
       margin-bottom: 1.75rem;
     }
-
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       background: #E8956A;
       color: #1A1530;
       font-family: 'Inter', sans-serif;
@@ -176,7 +275,21 @@
       border-radius: 2px;
       text-decoration: none;
     }
+    .btn-outline {
+      background: transparent;
+      color: #E8956A;
+      border: 1px solid rgba(232,149,106,0.5);
+    }
+    .btn-outline:hover {
+      border-color: #E8956A;
+    }
+    .btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
 
+    /* ── FOOTER ── */
     .footer {
       text-align: center;
       padding: 1.5rem 2rem;
@@ -184,22 +297,34 @@
       color: #3A3458;
       border-top: 1px solid rgba(242,237,232,0.05);
     }
+    .footer a {
+      color: #6A5888;
+      text-decoration: none;
+    }
+    .footer a:hover { color: #A89EC0; }
   </style>
 </head>
 <body>
 
+  <!-- FEATURED TESTIMONIAL BANNER -->
+  <div class="feature-quote">
+    <p>8 year old client booked dream role with <span class="highlight">Emilia Clarke</span> in When Darkness Loves Us.</p>
+  </div>
+
+  <!-- HERO -->
   <div class="hero">
     <p class="eyebrow">Self-tape studio &amp; acting coach · Orewa, New Zealand</p>
     <h1 class="hero-name">Shiny<br><em>Self-Tapes</em></h1>
     <p class="hero-tagline">with Rebecca McFadzien</p>
   </div>
 
+  <!-- SERVICES -->
   <div class="section">
-    <!-- <div class="section-label">Services &amp; pricing</div> -->
+    <div class="section-label">Services &amp; pricing</div>
     <div class="cards">
 
       <div class="card featured">
-        <h2 class="card-title">Self-tape Session - Basic - 1 hr</h2>
+        <h2 class="card-title">Self-tape Session — Basic — 1 hr</h2>
         <p class="card-body">A professional reader in studio for your big self-tape auditions. Arrive ready to shoot!</p>
         <ul class="card-includes">
           <li>In-person reader</li>
@@ -207,12 +332,12 @@
           <li>Editing &amp; delivery of your self-tape</li>
         </ul>
         <div class="card-footer">
-          <div class="price">$180</div>
+          <div class="price">$180<span> NZD</span></div>
         </div>
       </div>
 
       <div class="card featured">
-        <h2 class="card-title">Self-tape Session - Premium - 2 hrs</h2>
+        <h2 class="card-title">Self-tape Session — Premium — 2 hrs</h2>
         <p class="card-body">Everything you need — prep, coaching, filming, and a polished tape delivered and ready to send. Arrive with your script memorised.</p>
         <ul class="card-includes">
           <li>Script analysis &amp; preparation</li>
@@ -221,19 +346,70 @@
           <li>Editing &amp; delivery of your self-tape</li>
         </ul>
         <div class="card-footer">
-          <div class="price">$350</div>
+          <div class="price">$350<span> NZD</span></div>
         </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="section-label">About Rebecca</div>
+    <div class="about-inner">
+      <img src="rebecca.jpg" alt="Rebecca McFadzien" class="about-photo">
+      <div class="about-text">
+        <p>Rebecca was <strong>born just off-Broadway in New York City</strong> and has been performing ever since.</p>
+        <p>She holds a degree in <strong>Performing and Screen Arts (Acting)</strong> and has worked professionally in the screen industry for over <strong>17 years</strong> in both Los Angeles and Auckland.</p>
+        <p>Her credits include a <strong>recurring role on Shortland Street</strong> and lead roles in feature films, television series, short films, and commercials.</p>
+        <p>Rebecca loves helping actors build confidence on camera and deliver authentic performances.</p>
+        <p><strong>Get in touch!</strong></p>
       </div>
     </div>
   </div>
 
+  <!-- TESTIMONIALS -->
+  <div class="testimonials">
+    <div class="section">
+      <div class="section-label">What clients say</div>
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <blockquote>PLACEHOLDER — Tigerlily's quote goes here</blockquote>
+          <div class="testimonial-meta">Tigerlily &mdash; Booked a role in a film starring Emilia Clarke</div>
+        </div>
+
+        <div class="testimonial-card placeholder">
+          <blockquote>PLACEHOLDER — Verity's quote goes here</blockquote>
+          <div class="testimonial-meta">Verity</div>
+        </div>
+
+        <div class="testimonial-card placeholder">
+          <blockquote>PLACEHOLDER — Joel's quote goes here</blockquote>
+          <div class="testimonial-meta">Joel</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
   <div class="cta">
     <h2 class="cta-title">Ready to book?</h2>
     <p class="cta-sub">Based in Orewa — sessions by appointment.</p>
-    <a href="mailto:hello@shinyselftapes.com" class="btn">Get in touch</a>
+    <div class="cta-buttons">
+      <span class="btn">rebecca.mcfadzien@gmail.com</span>
+      <a href="https://www.instagram.com/shiny_self_tapes" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        @shinyseltapes
+      </a>
+    </div>
   </div>
 
-  <div class="footer">All prices in NZD · GST not yet applicable · Shiny Self-Tapes, Orewa</div>
+  <div class="footer">
+    All prices in NZD · GST not yet applicable · Shiny Self-Tapes, Orewa ·
+    <a href="mailto:rebecca.mcfadzien@gmail.com">rebecca.mcfadzien@gmail.com</a>
+  </div>
 
 </body>
 </html>
