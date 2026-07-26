@@ -303,6 +303,73 @@
       flex-shrink: 0;
     }
 
+    /* ── CONTACT FORM ── */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 420px;
+      margin: 0 auto 1.75rem;
+      text-align: left;
+    }
+    .contact-form label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #A89EC0;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: #221D3A;
+      border: 1px solid rgba(242,237,232,0.12);
+      border-radius: 6px;
+      padding: 0.7rem 0.85rem;
+      color: #F2EDE8;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: rgba(212,168,64,0.6);
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .contact-form .g-recaptcha {
+      margin: 4px auto 0;
+      transform: scale(1);
+      transform-origin: center;
+    }
+    .contact-form .submit-btn {
+      background: #E8956A;
+      color: #1A1530;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+    .contact-form .submit-btn:hover {
+      background: #ecA582;
+    }
+    .form-status {
+      font-size: 13px;
+      color: #D4A840;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    .form-status.visible { display: block; }
+
     /* ── FOOTER ── */
     .footer {
       text-align: center;
@@ -424,8 +491,25 @@
   <div class="cta">
     <h2 class="cta-title">Ready to book?</h2>
     <p class="cta-sub">Based in Orewa — sessions by appointment.</p>
+    <form class="contact-form" action="https://formspree.io/f/xzdnkqjj" method="POST" id="contactForm">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <div class="g-recaptcha" data-sitekey="6LeA72UtAAAAALfNtoFyiyCkfQYS95xbQxyXyWTp"></div>
+      <button type="submit" class="submit-btn">Send message</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+
     <div class="cta-buttons">
-      <span class="btn">rebecca.mcfadzien@gmail.com</span>
       <a href="https://www.instagram.com/shinyselftapes" target="_blank" rel="noopener" class="btn btn-outline">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
         @shinyselftapes
@@ -434,9 +518,42 @@
   </div>
 
   <div class="footer">
-    All prices in NZD · GST not yet applicable · Shiny Self-Tapes, Orewa ·
-    <a href="mailto:rebecca.mcfadzien@gmail.com">rebecca.mcfadzien@gmail.com</a>
+    All prices in NZD · GST not yet applicable · Shiny Self-Tapes, Orewa
   </div>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const status = document.getElementById('formStatus');
+      const recaptchaResponse = grecaptcha.getResponse();
+
+      if (!recaptchaResponse) {
+        status.textContent = 'Please complete the reCAPTCHA before sending.';
+        status.classList.add('visible');
+        return;
+      }
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          status.textContent = "Thanks! Your message has been sent — Rebecca will be in touch soon.";
+          form.reset();
+          grecaptcha.reset();
+        } else {
+          status.textContent = "Something went wrong sending your message — please try again.";
+        }
+        status.classList.add('visible');
+      }).catch(() => {
+        status.textContent = "Something went wrong sending your message — please try again.";
+        status.classList.add('visible');
+      });
+    });
+  </script>
 
 </body>
 </html>
