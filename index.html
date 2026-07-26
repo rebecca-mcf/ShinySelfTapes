@@ -38,6 +38,16 @@
       color: #D4A840;
       font-weight: 600;
     }
+    .feature-quote a {
+      color: #E8956A;
+      text-decoration: underline;
+      text-decoration-color: rgba(232,149,106,0.4);
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.2s;
+    }
+    .feature-quote a:hover {
+      text-decoration-color: #E8956A;
+    }
     .feature-quote .result-badge {
       display: inline-block;
       margin-top: 0.75rem;
@@ -219,11 +229,12 @@
       padding: 1.5rem;
     }
     .testimonial-card blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-style: italic;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
       color: #C8C0D8;
-      line-height: 1.55;
+      line-height: 1.7;
       margin-bottom: 1rem;
     }
     .testimonial-card blockquote::before { content: '\201C'; color: #D4A840; }
@@ -308,7 +319,7 @@
 
   <!-- FEATURED TESTIMONIAL BANNER -->
   <div class="feature-quote">
-    <p>8 year old client booked dream role with <span class="highlight">Emilia Clarke</span> in When Darkness Loves Us.</p>
+    <p>8 year old client Tigerlily Allison booked dream role with <span class="highlight">Emilia Clarke</span> in <a href="https://www.imdb.com/title/tt12681512/" target="_blank" rel="noopener noreferrer">When Darkness Loves Us.</a></p>
   </div>
 
   <!-- HERO -->
@@ -388,18 +399,18 @@
       <div class="testimonial-grid">
 
         <div class="testimonial-card">
-          <blockquote>PLACEHOLDER — Tigerlily's quote goes here</blockquote>
-          <div class="testimonial-meta">Tigerlily &mdash; Booked a role in a film starring Emilia Clarke</div>
+          <blockquote>She helped my daughter Tigerlily book a role in her first movie! She’s just got so much enthusiasm, she’s so much fun, she’s always smiling, she’s always ready to go to the next level for anyone that comes here! My daughter Tigerlily loves her, and loves coming here for her acting, and her self-tapes - and I can’t thank her enough for helping us and our family.</blockquote>
+          <div class="testimonial-meta">Anna Allison - Tigerlily's Mum</div>
         </div>
 
-        <div class="testimonial-card placeholder">
-          <blockquote>PLACEHOLDER — Verity's quote goes here</blockquote>
-          <div class="testimonial-meta">Verity</div>
+        <div class="testimonial-card">
+          <blockquote>I was blown away, not only by the fact that yes, I got the videos created and she helped me with that - but also by the direction and feedback she gave me on how I could make them better and more engaging! I would thoroughly recommend working with Rebecca!</blockquote>
+          <div class="testimonial-meta">Verity Craft</div>
         </div>
 
-        <div class="testimonial-card placeholder">
-          <blockquote>PLACEHOLDER — Joel's quote goes here</blockquote>
-          <div class="testimonial-meta">Joel</div>
+        <div class="testimonial-card">
+          <blockquote>I’ve just done my self-tapes with Rebecca, and she did a wonderful job reading for me and helping coach me through my monologue and my scene!</blockquote>
+          <div class="testimonial-meta">Joel Bird</div>
         </div>
 
       </div>
@@ -411,7 +422,7 @@
     <h2 class="cta-title">Ready to book?</h2>
     <p class="cta-sub">Based in Orewa — sessions by appointment.</p>
     <div class="cta-buttons">
-      <span class="btn">rebecca.mcfadzien@gmail.com</span>
+      <a href="mailto:rebecca.mcfadzien@gmail.com" class="btn">rebecca.mcfadzien@gmail.com</a>
       <a href="https://www.instagram.com/shiny_self_tapes" target="_blank" rel="noopener" class="btn btn-outline">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
         @shinyseltapes
