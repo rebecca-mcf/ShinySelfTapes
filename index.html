@@ -230,6 +230,21 @@
       border: 1px solid rgba(242,237,232,0.07);
       border-radius: 12px;
       padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .testimonial-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .testimonial-avatar {
+      width: 120px;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid rgba(212,168,64,0.4);
+      flex-shrink: 0;
     }
     .testimonial-card blockquote {
       font-family: 'Inter', sans-serif;
@@ -250,6 +265,10 @@
     }
     .testimonial-card.placeholder blockquote { color: #4A4060; }
     .testimonial-card.placeholder .testimonial-meta { color: #4A4060; }
+    @media (max-width: 520px) {
+      .testimonial-card { flex-direction: column; }
+      .testimonial-avatar { width: 100%; height: 220px; }
+    }
 
     /* ── CTA ── */
     .cta {
@@ -469,18 +488,27 @@
       <div class="testimonial-grid">
 
         <div class="testimonial-card">
-          <blockquote>She helped my daughter Tigerlily book a role in her first movie! She’s just got so much enthusiasm, she’s so much fun, she’s always smiling, she’s always ready to go to the next level for anyone that comes here! My daughter Tigerlily loves her, and loves coming here for her acting, and her self-tapes - and I can’t thank her enough for helping us and our family.</blockquote>
-          <div class="testimonial-meta">Anna Allison - Tigerlily's Mum</div>
+          <div class="testimonial-body">
+            <blockquote>She helped my daughter Tigerlily book a role in her first movie! She’s just got so much enthusiasm, she’s so much fun, she’s always smiling, she’s always ready to go to the next level for anyone that comes here! My daughter Tigerlily loves her, and loves coming here for her acting, and her self-tapes - and I can’t thank her enough for helping us and our family.</blockquote>
+            <div class="testimonial-meta">Anna Allison - Tigerlily's Mum</div>
+          </div>
+          <img src="tigerlily.jpg" alt="Tigerlily" class="testimonial-avatar" loading="lazy">
         </div>
 
         <div class="testimonial-card">
-          <blockquote>I was blown away, not only by the fact that yes, I got the videos created and she helped me with that - but also by the direction and feedback she gave me on how I could make them better and more engaging! I would thoroughly recommend working with Rebecca!</blockquote>
-          <div class="testimonial-meta">Verity Craft</div>
+          <div class="testimonial-body">
+            <blockquote>I was blown away, not only by the fact that yes, I got the videos created and she helped me with that - but also by the direction and feedback she gave me on how I could make them better and more engaging! I would thoroughly recommend working with Rebecca!</blockquote>
+            <div class="testimonial-meta">Verity Craft</div>
+          </div>
+          <img src="verity-craft.jpg" alt="Verity Craft" class="testimonial-avatar" loading="lazy">
         </div>
 
         <div class="testimonial-card">
-          <blockquote>I’ve just done my self-tapes with Rebecca, and she did a wonderful job reading for me and helping coach me through my monologue and my scene!</blockquote>
-          <div class="testimonial-meta">Joel Bird</div>
+          <div class="testimonial-body">
+            <blockquote>I’ve just done my self-tapes with Rebecca, and she did a wonderful job reading for me and helping coach me through my monologue and my scene!</blockquote>
+            <div class="testimonial-meta">Joel Bird</div>
+          </div>
+          <img src="joel.jpg" alt="Joel Bird" class="testimonial-avatar" loading="lazy">
         </div>
 
       </div>
