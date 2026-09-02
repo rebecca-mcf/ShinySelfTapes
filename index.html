@@ -139,6 +139,12 @@
       flex-direction: column;
       gap: 16px;
     }
+    @media (min-width: 860px) {
+      .services-section { max-width: 1080px; }
+      .cards { flex-direction: row; align-items: stretch; }
+      .card { flex: 1; display: flex; flex-direction: column; }
+      .card-footer { margin-top: auto; }
+    }
     .card {
       background: #221D3A;
       border: 1px solid rgba(242,237,232,0.08);
@@ -438,7 +444,7 @@
   </div>
 
   <!-- SERVICES -->
-  <div class="section">
+  <div class="section services-section">
     <div class="section-label">Services &amp; pricing</div>
     <div class="cards">
 
